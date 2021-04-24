@@ -3,7 +3,7 @@
 //Here is another revision
 
 pipeline {
-    agent { docker { image 'cpphelloci:latest2' } }
+    agent { dockerfile true } }
     stages {
         stage('build') {
             steps {
