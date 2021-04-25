@@ -7,6 +7,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh 'docker run mjwood51/docker-repo:latest'
                 sh 'cpp --version'
             }
         }
