@@ -7,8 +7,12 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'docker run mjwood51/docker-repo:latest'
-                sh 'cpp --version'
+                sh 'echo "Hello World" '
+                sh ''' 
+                    cpp --version
+                    echo "Multiline steps work too"   
+                 '''
+                docker.image('cpphelloci:latest2').withRun("-p 3000:3000")
             }
         }
     }
